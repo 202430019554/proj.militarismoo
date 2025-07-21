@@ -1,0 +1,91 @@
+<html>
+    <head>
+        <title>TelaLogin</title>
+        <style>
+            body {
+               background-image: url("https://cdn.noticiabrasil.net.br/img/07e8/06/06/34973427_0:184:2989:1865_1920x0_80_0_0_c9ac40f28cfc40499733c22d1e28a014.jpg");background-repeat: no-repeat;background-size: cover;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+                font-family: arial, sans-serif;
+            }
+            .login-container {
+                background-image: linear-gradient(45deg,#000000,#0e3804);
+                padding: 30px;
+                border-radius: 10px;
+                box-shadow: ;
+            }
+            .login-container h1 {
+                text-align: center;
+                margin-bottom: 20px;
+                color: rgb(255, 255, 255);
+            }
+            .login-container input[type="text"],
+            .login-container input[type="password"] {
+                width: 100%;
+                padding: 10px;
+                margin: 10 px 0;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+                margin-top: 15px;
+            }
+            .login-container button {
+                width: 100%;
+                padding: 10px;
+                background-color: #78866b;
+                border: none;
+                color: white;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+            .login-container button:hover {
+                background-color: #78866b;
+            }
+            mens {
+                margin-top: 10px;
+                text-align: center;
+                color: #f4f5f6;
+            }
+
+
+        </style>
+    </head>
+    <body>
+
+
+        <div class="login-container">
+            <h1>Faça seu login</h1>
+        <form onsubmit="return validarLogin()">
+            <input type="text" id="usuario" placeholder="Usuario" required>
+
+            <input type="password" id="senha" placeholder="Senha" required>
+            <p></p>
+            <button type="submit">Entrar</button>
+            <div class="mens" id="mensagem"></div>
+        </form>
+        </div>
+        <script>
+            function validarLogin() {
+            const usuario = document.getElementById("usuario").value;
+            const senha = document.getElementById("senha").value;
+            const mensagem = document.getElementById("mensagem");
+
+            if (usuario === "EU" && senha === "1234") {
+                mensagem.style.color = "yellow";
+                mensagem.textContent = "Login Autorizado";
+
+                setTimeout(() => {
+                    window.location.href = "file:///C:/Users/202430136031/pagina%20fabinho.html";
+                }, 1000);
+                return false;
+            } else {
+                mensagem.style.color = "red";
+                mensagem.textContent = "Usuario ou senha incorreta. Tente novamente";
+                return false;
+            }
+        }
+        </script>
+    </body>
+</html>
